@@ -1,28 +1,21 @@
 import pygame
 from code.menu import Menu
+from code.const import WIN_WIDTH, WIN_HEIGHT
 
 class Game:
 
   def __init__(self):
     pygame.init()
     pygame.display.set_caption("Oiram")   
-    screen = pygame.display.set_mode((1450, 900)) 
-    self.window = screen
-    clock = pygame.time.Clock()  
-    background = pygame.image.load("assets/backgrounds/dawn.png")
-    screen.blit(background, (0, 0))  
-    pygame.display.flip()           
-    clock.tick(144)  
-                    
+    self.window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT)) 
   
+                    
   def run(self):
-    running = True
-    while running:
+    while True:
       menu = Menu(self.window)
       menu.run()
-      for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-          running = False
+      pass
+    
 
         
                           
