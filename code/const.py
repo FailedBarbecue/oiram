@@ -1,5 +1,6 @@
 # C
 COLOR_WHITE = (255,255,255)
+COLOR_RED = (139,0,0)
 # G 
 GAME_NAME = 'Oiram'
 # M
