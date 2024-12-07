@@ -9,7 +9,7 @@ class Level:
     self.name = name
     self.menu_option = menu_option
     self.entity_list: list[Entity] = []
-    self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
+    self.entity_list.extend(EntityFactory.get_entity('parallax'))
 
   def run(self):
     while True:
