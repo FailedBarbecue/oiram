@@ -11,6 +11,7 @@ class Level:
     self.menu_option = menu_option
     self.entity_list: list[Entity] = []
     self.entity_list.extend(EntityFactory.get_entity('parallax'))
+    self.entity_list.append(EntityFactory.get_entity('Player1'))
 
   def run(self):
     clock = pygame.time.Clock()

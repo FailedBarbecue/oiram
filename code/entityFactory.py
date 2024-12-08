@@ -13,4 +13,4 @@ class EntityFactory:
           list_bg.append(Background(f'parallax{i}', (0,0)))
         return list_bg
       case 'Player1':
-        return Player('Player1', (10,200) )
+        return Player('Player1', (10,230) )

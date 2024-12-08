@@ -9,7 +9,4 @@ class Player(Entity):
         pass
 
     def move(self, keys):
-        if keys[pygame.K_LEFT]:
-            self.rect.x -= 5
-        if keys[pygame.K_RIGHT]:
-            self.rect.x += 5
+        pass
