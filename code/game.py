@@ -16,13 +16,13 @@ class Game:
       menu = Menu(self.window)
       menu_return = menu.run()
       
-      if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
+      if menu_return in [MENU_OPTION[0], MENU_OPTION[1]]:
         level = Level(self.window, "Level1", menu_return)
         Level.run(level)
-      elif menu_return == MENU_OPTION[3]:
+      elif menu_return == MENU_OPTION[2]:
         # score.show()
         pass
-      elif menu_return == MENU_OPTION[4]:
+      elif menu_return == MENU_OPTION[3]:
         pygame.quit()
         quit()
       else:
