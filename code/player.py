@@ -1,11 +1,12 @@
 import pygame
+from code.entity import Entity
 
-class Player(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        super().__init__()
-        self.image = pygame.image.load("assets/idle1.png")
-        self.rect = self.image.get_rect()
-        self.rect.topleft = (x, y)
+class Player(Entity):
+    def __init__(self, name: str, position: tuple):
+        super().__init__(name, position)
+        
+    def update(self,):
+        pass
 
     def move(self, keys):
         if keys[pygame.K_LEFT]:

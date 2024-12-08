@@ -6,18 +6,17 @@ class Menu:
 
   def __init__(self, window):
     self.window = window
-    self.surf = pygame.image.load("assets/menu.jpg")
+    self.surf = pygame.image.load("assets/menu.jpg").convert_alpha()
    
 
 
   def run(self,):
   # LOAD MENU MUSIC
-  #  pygame.mixer_music.load('./assets/menu.mp3')
-  #  pygame.mixer_music.play(-1)
+   pygame.mixer_music.load('./assets/menu.mp3')
+   pygame.mixer_music.play(-1)
 
    menu_option = 0
    while True: 
-
   # DRAW IMAGE AND MENU TEXT
     self.window.blit(self.surf, (0, 0)) 
     self.menu_text(80, GAME_NAME, COLOR_WHITE, ((WIN_WIDTH / 2), 100))
