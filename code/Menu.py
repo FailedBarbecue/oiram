@@ -1,6 +1,6 @@
 import pygame
 
-from code.const import WIN_WIDTH, COLOR_WHITE, COLOR_RED, GAME_NAME, MENU_OPTION
+from code.Const import WIN_WIDTH, COLOR_WHITE, COLOR_RED, GAME_NAME, MENU_OPTION
 
 class Menu:
 

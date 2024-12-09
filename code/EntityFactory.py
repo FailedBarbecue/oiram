@@ -1,7 +1,7 @@
-from code.background import Background
-from code.player import Player
-from code.enemy import Enemy
-from code.const import WIN_WIDTH
+from code.Background import Background
+from code.Player import Player
+from code.Enemy import Enemy
+from code.Const import WIN_WIDTH
 import random 
 class EntityFactory:
 

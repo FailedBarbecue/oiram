@@ -28,6 +28,8 @@ PLAYER_KEY_RIGHT = {'player1': pygame.K_RIGHT,
                     'player2': pygame.K_d}
 PLAYER_KEY_LEFT ={'player1': pygame.K_LEFT,
                   'player2': pygame.K_a}
+PLAYER_KEY_ATTACK = {'player1': pygame.K_RCTRL,               
+                     'player2': pygame.K_SPACE}
 # W 
 WIN_WIDTH = 1280
 WIN_HEIGHT = 720

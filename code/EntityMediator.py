@@ -1,6 +1,6 @@
-from code.entity import Entity
-from code.enemy import Enemy
-from code.const import WIN_WIDTH
+from code.Entity import Entity
+from code.Enemy import Enemy
+from code.Const import WIN_WIDTH
 class EntityMediator:
   @staticmethod
   def __verify_collision_window(ent: Entity):

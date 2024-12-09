@@ -1,5 +1,5 @@
 import pygame.image
-from code.const import ENTITY_HEALTH
+from code.Const import ENTITY_HEALTH
 from abc import ABC, abstractmethod
 
 class Entity(ABC):

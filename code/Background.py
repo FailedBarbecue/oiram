@@ -1,4 +1,4 @@
-from code.entity import Entity
+from code.Entity import Entity
 
 class Background(Entity):
 

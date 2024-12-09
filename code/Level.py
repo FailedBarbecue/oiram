@@ -1,8 +1,8 @@
 import pygame
-from code.entity import Entity
-from code.entityFactory import EntityFactory
-from code.const import COLOR_WHITE, WIN_HEIGHT, WIN_WIDTH, MENU_OPTION, EVENT_ENEMY
-from code.entityMediator import EntityMediator
+from code.Entity import Entity
+from code.EntityFactory import EntityFactory
+from code.Const import COLOR_WHITE, WIN_HEIGHT, WIN_WIDTH, MENU_OPTION, EVENT_ENEMY
+from code.EntityMediator import EntityMediator
 import random
 
 class Level:
@@ -22,8 +22,13 @@ class Level:
     while True:
       clock.tick(60)
       for ent in self.entity_list:
-        if 'player' in ent.name or 'enemy1' in ent.name or 'enemy2' in ent.name:
+        if 'player' in ent.name: 
           ent.move()
+          ent.attack()
+          ent.update_attack()
+        if 'enemy' in ent.name:
+          ent.move()
+          
         self.window.blit(source=ent.surf, dest=ent.rect)
       for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -33,7 +38,7 @@ class Level:
           choice = random.choice(('enemy1','enemy2'))
           self.entity_list.append(EntityFactory.get_entity(choice))
       pygame.display.flip()
-      
+
       #collisions
       EntityMediator.verify_collision(entity_list = self.entity_list)
       EntityMediator.verify_health(entity_list = self.entity_list)

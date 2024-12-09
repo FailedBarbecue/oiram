@@ -1,6 +1,6 @@
 import pygame
-from code.entity import Entity
-from code.const import WIN_WIDTH
+from code.Entity import Entity
+from code.Const import WIN_WIDTH
 
 class Enemy(Entity):
     def __init__(self, name: str, position: tuple):
