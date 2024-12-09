@@ -26,7 +26,6 @@ class Player(Entity):
         self.attack_frame = 0  # 
         self.attack_timer = 0
         self.surf = self.image_right
-        print(self.health)
     def move(self):
         pressed_key = pygame.key.get_pressed()
         if pressed_key[PLAYER_KEY_RIGHT[self.name]] and self.rect.right < WIN_WIDTH:
