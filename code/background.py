@@ -7,4 +7,4 @@ class Background(Entity):
 
   def move(self, ):
     self.rect.centerx -= 1
-    pass
+    

@@ -2,6 +2,20 @@ import pygame
 # C
 COLOR_WHITE = (255,255,255)
 COLOR_RED = (139,0,0)
+# E
+EVENT_ENEMY = pygame.USEREVENT + 1
+
+ENTITY_HEALTH = {
+  'player1': 100,
+  'player2': 100,
+  'enemy1': 100,
+  'enemy2': 100,
+  'parallax0': 999,
+  'parallax1': 999,
+  'parallax2': 999,
+  'parallax3': 999,
+
+}
 # G 
 GAME_NAME = 'Oiram'
 # M
