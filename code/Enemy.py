@@ -11,3 +11,7 @@ class Enemy(Entity):
         self.rect.centerx -= 2
       else:
         self.rect.centerx += 2
+
+    def attack(self, player):
+        if self.rect.colliderect(player.rect):
+            player.take_damage(50)  

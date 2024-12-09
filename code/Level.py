@@ -12,10 +12,14 @@ class Level:
     self.name = name
     self.game_mode = game_mode
     self.entity_list: list[Entity] = []
+    self.player_list: list[Entity] = []
     self.entity_list.extend(EntityFactory.get_entity('parallax'))
     self.entity_list.append(EntityFactory.get_entity('player1'))
+    self.player_list.append(EntityFactory.get_entity('player1'))
     if game_mode in [MENU_OPTION[1]]:
       self.entity_list.append(EntityFactory.get_entity('player2'))
+      self.player_list.append(EntityFactory.get_entity('player2'))
+
     pygame.time.set_timer(EVENT_ENEMY, 2000)
   def run(self):
     clock = pygame.time.Clock()
@@ -28,6 +32,8 @@ class Level:
           ent.update_attack()
         if 'enemy' in ent.name:
           ent.move()
+          for player in self.player_list:
+            ent.attack(player)
           
         self.window.blit(source=ent.surf, dest=ent.rect)
       for event in pygame.event.get():

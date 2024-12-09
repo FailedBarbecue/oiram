@@ -26,6 +26,7 @@ class Player(Entity):
         self.attack_frame = 0  # 
         self.attack_timer = 0
         self.surf = self.image_right
+        print(self.health)
     def move(self):
         pressed_key = pygame.key.get_pressed()
         if pressed_key[PLAYER_KEY_RIGHT[self.name]] and self.rect.right < WIN_WIDTH:
@@ -35,7 +36,7 @@ class Player(Entity):
                 self.surf = self.image_right
         if pressed_key[PLAYER_KEY_LEFT[self.name]] and self.rect.left > 0:
             self.rect.centerx -= 3
-            if self.direction != 'left':  # Atualiza a direção
+            if self.direction != 'left':  
                 self.direction = 'left'
                 self.surf = self.image_left
         pass
@@ -48,18 +49,26 @@ class Player(Entity):
 
     def update_attack(self):
         if self.is_attacking:
-            self.attack_timer += 1  # Incrementa o temporizador
+            self.attack_timer += 1  
 
-            # Troca de imagem a cada 5 ticks (ajuste conforme necessário)
-            if self.attack_timer % 5 == 0:
+            if self.attack_timer % 8 == 0:
                 if self.direction == 'right':
                     self.surf = self.attack_images[self.attack_frame]
                 else:
                     self.surf = self.attack_images_left[self.attack_frame]
-                self.attack_frame += 1  # Avança para o próximo frame
-
-                # Finaliza o ataque se a sequência de imagens terminar
+                self.attack_frame += 1  
                 if self.attack_frame >= len(self.attack_images):
                     self.is_attacking = False
                     self.attack_timer = 0
-                    self.surf = pygame.image.load(f'./assets/{self.name}.png').convert_alpha()
+                    if self.direction == 'right':
+                        self.surf = pygame.image.load(f'./assets/{self.name}.png').convert_alpha()
+                    else:
+                        self.surf = pygame.image.load(f'./assets/{self.name}_left.png').convert_alpha()
+
+    def take_damage(self, amount):
+        self.health -= amount
+        print(f"{self.name} tomou {amount} de dano! Saúde atual: {self.health}")
+        if self.health <= 0:
+            print(f"{self.name} foi derrotado!")
+
+
